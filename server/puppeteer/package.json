@@ -1,0 +1,27 @@
+{
+  "name": "bird-runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "landa build",
+    "invoke": "landa invoke --dev",
+    "dev": "landa serve --dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.20",
+    "@types/puppeteer": "^5.4.2",
+    "aws-sdk": "^2.823.0",
+    "landa": "^2.1.7",
+    "puppeteer": "^5.5.0",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "chrome-aws-lambda": "^5.5.0",
+    "puppeteer-core": "^5.5.0",
+    "puppeteer-extra": "^3.1.15"
+  }
+}
