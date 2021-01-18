@@ -5,6 +5,7 @@ import { PuppeteerStack } from "../lib/aws-cdk-stack";
 const app = new cdk.App();
 new PuppeteerStack(app, "PuppeteerStack", {
   environmentVariables: {
-    islocal: "false",
+    IS_LOCAL: "false",
+    BUCKET_NAME: "hello",
   },
 });

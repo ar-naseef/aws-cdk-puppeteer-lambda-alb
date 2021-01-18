@@ -1,7 +1,12 @@
 import chromium from "chrome-aws-lambda";
 import { wrapResponse } from "../../packages";
 
-const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN } = process.env;
+const {
+  AWS_LAMBDA_FUNCTION_NAME,
+  CHROMIUM_BIN,
+  IS_LOCAL,
+  BUCKET_NAME,
+} = process.env;
 
 let puppeteer;
 let chromiumArgs = [
@@ -33,6 +38,8 @@ export const handler = async (event) => {
   // islocal is an env variable set from aws cdk. based on that, puppeteer (which will be installed locally) or
   // chrome-aws-lambda will be used.
 
+  console.log("IS_LOCAL >>>", IS_LOCAL);
+  console.log("BUCKET_NAME >>>", BUCKET_NAME);
   try {
     console.log("await chromium.executablePath>>>", await chromiumBin);
     console.log("chromium.args>>>", chromiumArgs);
